@@ -4,11 +4,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="display-4">Home</h1>
+<body background="https://images.unsplash.com/photo-1541682278521-2b1e654eb70b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=333&q=80" alt="Not Found">
+</body>
+
 
 <p>
     <strong>Registered Heroes</strong>
+<p> <a href="Home\Hero\Create.cshtml">Add A Hero</a></p>
+
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -18,26 +24,27 @@
             <th>
                 @Html.DisplayNameFor(model => model.SuperheroID)
             </th>
-            
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.HeroName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SuperheroID)
-            </td>
-            
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.SuperheroID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SuperheroID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SuperheroID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HeroName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SuperheroID)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SuperheroID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SuperheroID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SuperheroID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
